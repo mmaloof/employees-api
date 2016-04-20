@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+  get '/' => 'pages#home'
+  
   namespace :api do 
-    namespace :v1 do 
+    namespace :v1 do
+      get '/people' => 'people#index'
+      post '/people' => 'people#create' 
       get '/employees' => 'employees#index'
       get '/employees/:id' => 'employees#show'
       post '/employees' => 'employees#create'
